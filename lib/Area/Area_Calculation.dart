@@ -1,10 +1,8 @@
-import 'package:flutter/material.dart';
-
-
-class Area{
+class Area {
   double metersToFeet(double meters) {
     return meters * 3.28084;
   }
+
   double feetToMeters(double feet) {
     return feet / 3.28084;
   }

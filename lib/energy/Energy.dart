@@ -79,9 +79,9 @@ class _EnergypageState extends State<Energypage> {
       body: ListView(
         children: [
           const SizedBox(height: 10),
-          Column(
+          const Column(
             children: [
-              const Text('Convert To Electric', style: TextStyle(fontSize: 20)),
+              Text('Convert To Electric', style: TextStyle(fontSize: 20)),
             ],
           ),
           const SizedBox(height: 10),
@@ -96,8 +96,8 @@ class _EnergypageState extends State<Energypage> {
                   FilteringTextInputFormatter.allow(
                       RegExp(r'^\d{0,9}\.?\d{0,4}')),
                 ],
-                keyboardType: const TextInputType.numberWithOptions(
-                    decimal: true),
+                keyboardType:
+                    const TextInputType.numberWithOptions(decimal: true),
                 style: const TextStyle(fontSize: 10),
                 decoration: const InputDecoration(
                   border: OutlineInputBorder(),
@@ -119,7 +119,8 @@ class _EnergypageState extends State<Energypage> {
                       });
                     },
                   ),
-                  const Text('Sound to Electrical', style: TextStyle(fontSize: 15)),
+                  const Text('Sound to Electrical',
+                      style: TextStyle(fontSize: 15)),
                 ],
               ),
               Row(
@@ -133,7 +134,8 @@ class _EnergypageState extends State<Energypage> {
                       });
                     },
                   ),
-                  const Text('Heat To Electrical', style: TextStyle(fontSize: 15)),
+                  const Text('Heat To Electrical',
+                      style: TextStyle(fontSize: 15)),
                 ],
               ),
               Row(
@@ -147,7 +149,8 @@ class _EnergypageState extends State<Energypage> {
                       });
                     },
                   ),
-                  const Text('Motion To Electrical', style: TextStyle(fontSize: 15)),
+                  const Text('Motion To Electrical',
+                      style: TextStyle(fontSize: 15)),
                 ],
               ),
               Row(
@@ -161,7 +164,8 @@ class _EnergypageState extends State<Energypage> {
                       });
                     },
                   ),
-                  const Text('Mechanical To ELectrical', style: TextStyle(fontSize: 15)),
+                  const Text('Mechanical To ELectrical',
+                      style: TextStyle(fontSize: 15)),
                 ],
               ),
             ],
@@ -171,7 +175,8 @@ class _EnergypageState extends State<Energypage> {
             onPressed: () {
               TotalResult();
             },
-            child:const Text('Convert', style: TextStyle(fontSize: 25, color: Colors.blue)),
+            child: const Text('Convert',
+                style: TextStyle(fontSize: 25, color: Colors.blue)),
           ),
           const SizedBox(height: 20),
           const Divider(

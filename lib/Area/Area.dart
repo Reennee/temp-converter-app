@@ -3,14 +3,14 @@ import 'package:flutter/services.dart';
 import 'Area_Calculation.dart';
 
 class Areapage extends StatefulWidget {
-  const Areapage({Key? key});
+  const Areapage({super.key});
 
   @override
   State<Areapage> createState() => _AreapageState();
 }
 
 class _AreapageState extends State<Areapage> {
-  TextEditingController _value = TextEditingController();
+  final TextEditingController _value = TextEditingController();
   int? SelectedValue;
   String from = '';
   String to = '';
@@ -95,9 +95,11 @@ class _AreapageState extends State<Areapage> {
             child: TextField(
               controller: _value,
               inputFormatters: [
-                FilteringTextInputFormatter.allow(RegExp(r'^\d{0,9}\.?\d{0,4}')),
+                FilteringTextInputFormatter.allow(
+                    RegExp(r'^\d{0,9}\.?\d{0,4}')),
               ],
-              keyboardType: const TextInputType.numberWithOptions(decimal: true),
+              keyboardType:
+                  const TextInputType.numberWithOptions(decimal: true),
               style: const TextStyle(fontSize: 10),
               decoration: const InputDecoration(
                 border: OutlineInputBorder(),
@@ -147,7 +149,8 @@ class _AreapageState extends State<Areapage> {
                       to = 'Acres';
                     });
                   }),
-              const Text('SquareMeters To Acres', style: TextStyle(fontSize: 15)),
+              const Text('SquareMeters To Acres',
+                  style: TextStyle(fontSize: 15)),
             ],
           ),
           Row(
@@ -162,7 +165,8 @@ class _AreapageState extends State<Areapage> {
                       to = 'SquareMeters';
                     });
                   }),
-              const Text('Acres To SquareMeters', style: TextStyle(fontSize: 15)),
+              const Text('Acres To SquareMeters',
+                  style: TextStyle(fontSize: 15)),
             ],
           ),
           const SizedBox(height: 12),
@@ -170,7 +174,8 @@ class _AreapageState extends State<Areapage> {
             onPressed: () {
               TotalResult();
             },
-            child: const Text('Convert', style: TextStyle(fontSize: 25, color: Colors.cyanAccent)),
+            child: const Text('Convert',
+                style: TextStyle(fontSize: 25, color: Colors.cyanAccent)),
           ),
           const Divider(
             color: Colors.cyanAccent,

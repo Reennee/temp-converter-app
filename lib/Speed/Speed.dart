@@ -3,7 +3,7 @@ import 'package:flutter/services.dart';
 import 'Speed_Calculation.dart';
 
 class Speedpage extends StatefulWidget {
-  const Speedpage({Key? key});
+  const Speedpage({super.key});
 
   @override
   State<Speedpage> createState() => _SpeedpageState();
@@ -11,7 +11,7 @@ class Speedpage extends StatefulWidget {
 
 class _SpeedpageState extends State<Speedpage> {
   double result = 0;
-  TextEditingController _value = TextEditingController();
+  final TextEditingController _value = TextEditingController();
   Speed speed = speeds.first;
 
   double MilesperHourtoKilometersperHour(double mph) {
@@ -77,7 +77,7 @@ class _SpeedpageState extends State<Speedpage> {
         ],
       ),
       body: ListView(
-        padding:const EdgeInsets.all(16.0),
+        padding: const EdgeInsets.all(16.0),
         children: [
           const SizedBox(height: 5),
           Row(
@@ -89,12 +89,15 @@ class _SpeedpageState extends State<Speedpage> {
                 child: TextField(
                   controller: _value,
                   inputFormatters: [
-                    FilteringTextInputFormatter.allow(RegExp(r'^\d{0,9}\.?\d{0,4}')),
+                    FilteringTextInputFormatter.allow(
+                        RegExp(r'^\d{0,9}\.?\d{0,4}')),
                   ],
-                  keyboardType: const TextInputType.numberWithOptions(decimal: true),
+                  keyboardType:
+                      const TextInputType.numberWithOptions(decimal: true),
                   style: const TextStyle(fontSize: 10),
                   decoration: const InputDecoration(
-                      border: OutlineInputBorder(), hintText: 'Only Number is allowed'),
+                      border: OutlineInputBorder(),
+                      hintText: 'Only Number is allowed'),
                 ),
               ),
             ],
@@ -103,7 +106,7 @@ class _SpeedpageState extends State<Speedpage> {
           Row(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
-              SizedBox(width:MediaQuery.of(context).size.width*0.01),
+              SizedBox(width: MediaQuery.of(context).size.width * 0.01),
               DropdownMenu(
                   width: MediaQuery.of(context).size.width * 0.51,
                   initialSelection: speeds[0],
@@ -112,8 +115,10 @@ class _SpeedpageState extends State<Speedpage> {
                       updatespeed(speed as Speed);
                     });
                   },
-                  dropdownMenuEntries: speeds.map<DropdownMenuEntry<Speed>>((Speed speed) {
-                    return DropdownMenuEntry(value: speed, label: speed.toString());
+                  dropdownMenuEntries:
+                      speeds.map<DropdownMenuEntry<Speed>>((Speed speed) {
+                    return DropdownMenuEntry(
+                        value: speed, label: speed.toString());
                   }).toList()),
               const SizedBox(width: 15),
               ElevatedButton(
@@ -121,11 +126,12 @@ class _SpeedpageState extends State<Speedpage> {
                   totalresult();
                 },
                 style: ButtonStyle(
-                    fixedSize: MaterialStateProperty.all(Size(
-                      MediaQuery.of(context).size.width * 0.25,
-                      50.0,
-                    ))),
-                child: const Text('Convert', style: TextStyle(fontSize: 12, color: Colors.black)),
+                    fixedSize: WidgetStateProperty.all(Size(
+                  MediaQuery.of(context).size.width * 0.25,
+                  50.0,
+                ))),
+                child: const Text('Convert',
+                    style: TextStyle(fontSize: 12, color: Colors.black)),
               ),
             ],
           ),

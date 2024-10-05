@@ -10,7 +10,7 @@ class Temperturepage extends StatefulWidget {
 }
 
 class _TemperturepageState extends State<Temperturepage> {
-  TextEditingController _value = TextEditingController();
+  final TextEditingController _value = TextEditingController();
   String from = '';
   String to = '';
   double result = 0;
@@ -98,9 +98,11 @@ class _TemperturepageState extends State<Temperturepage> {
             child: TextField(
               controller: _value,
               inputFormatters: [
-                FilteringTextInputFormatter.allow(RegExp(r'^\d{0,9}\.?\d{0,4}')),
+                FilteringTextInputFormatter.allow(
+                    RegExp(r'^\d{0,9}\.?\d{0,4}')),
               ],
-              keyboardType: const TextInputType.numberWithOptions(decimal: true),
+              keyboardType:
+                  const TextInputType.numberWithOptions(decimal: true),
               style: const TextStyle(fontSize: 10),
               decoration: const InputDecoration(
                 border: OutlineInputBorder(),
@@ -121,7 +123,8 @@ class _TemperturepageState extends State<Temperturepage> {
                   });
                 },
               ),
-              const Text('Celsius To Fahrenheit', style: TextStyle(fontSize: 15)),
+              const Text('Celsius To Fahrenheit',
+                  style: TextStyle(fontSize: 15)),
             ],
           ),
           Row(
@@ -137,7 +140,8 @@ class _TemperturepageState extends State<Temperturepage> {
                   });
                 },
               ),
-              const Text('Fahrenheit To Celsius', style: TextStyle(fontSize: 15)),
+              const Text('Fahrenheit To Celsius',
+                  style: TextStyle(fontSize: 15)),
             ],
           ),
           Row(
@@ -185,7 +189,8 @@ class _TemperturepageState extends State<Temperturepage> {
                   });
                 },
               ),
-              const Text('Fahrenheit To Kelvin', style: TextStyle(fontSize: 15)),
+              const Text('Fahrenheit To Kelvin',
+                  style: TextStyle(fontSize: 15)),
             ],
           ),
           Row(
@@ -209,7 +214,8 @@ class _TemperturepageState extends State<Temperturepage> {
             onPressed: () {
               Totalresult();
             },
-            child: const Text('Convert', style: TextStyle(fontSize: 25, color: Colors.deepOrange)),
+            child: const Text('Convert',
+                style: TextStyle(fontSize: 25, color: Colors.deepOrange)),
           ),
           const Divider(
             color: Colors.deepOrange,

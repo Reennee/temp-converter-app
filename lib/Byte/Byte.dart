@@ -10,7 +10,7 @@ class Bytespage extends StatefulWidget {
 }
 
 class _BytespageState extends State<Bytespage> {
-  TextEditingController _value = TextEditingController();
+  final TextEditingController _value = TextEditingController();
   String from = '';
   String to = '';
   double result = 0;
@@ -99,10 +99,12 @@ class _BytespageState extends State<Bytespage> {
             child: TextField(
               controller: _value,
               inputFormatters: [
-                FilteringTextInputFormatter.allow(RegExp(r'^\d{0,9}\.?\d{0,4}')),
+                FilteringTextInputFormatter.allow(
+                    RegExp(r'^\d{0,9}\.?\d{0,4}')),
               ],
-              keyboardType: const TextInputType.numberWithOptions(decimal: true),
-              style:const  TextStyle(fontSize: 10),
+              keyboardType:
+                  const TextInputType.numberWithOptions(decimal: true),
+              style: const TextStyle(fontSize: 10),
               decoration: const InputDecoration(
                 border: OutlineInputBorder(),
                 hintText: 'Only Number is allowed',
@@ -151,7 +153,8 @@ class _BytespageState extends State<Bytespage> {
                       to = 'Megabytes';
                     });
                   }),
-              const Text('Killobytes To Megabytes', style: TextStyle(fontSize: 15)),
+              const Text('Killobytes To Megabytes',
+                  style: TextStyle(fontSize: 15)),
             ],
           ),
           Row(
@@ -166,7 +169,8 @@ class _BytespageState extends State<Bytespage> {
                       to = 'Gigabytes';
                     });
                   }),
-              const Text('Megabytes To Gigabytes', style: TextStyle(fontSize: 15)),
+              const Text('Megabytes To Gigabytes',
+                  style: TextStyle(fontSize: 15)),
             ],
           ),
           Row(
@@ -181,7 +185,8 @@ class _BytespageState extends State<Bytespage> {
                       to = 'Terabytes';
                     });
                   }),
-              const Text('Gigabytes To Terabytes', style: TextStyle(fontSize: 15)),
+              const Text('Gigabytes To Terabytes',
+                  style: TextStyle(fontSize: 15)),
             ],
           ),
           Row(
@@ -204,7 +209,8 @@ class _BytespageState extends State<Bytespage> {
             onPressed: () {
               Totalresult();
             },
-            child: const Text('Convert', style: TextStyle(fontSize: 25, color: Colors.lightGreenAccent)),
+            child: const Text('Convert',
+                style: TextStyle(fontSize: 25, color: Colors.lightGreenAccent)),
           ),
           const Divider(
             color: Colors.lightGreenAccent,

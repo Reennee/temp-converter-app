@@ -1,6 +1,4 @@
-import 'package:flutter/material.dart';
-
-class Temp{
+class Temp {
   double celsiusToFahrenheit(double celsius) {
     return (celsius * 9 / 5) + 32;
   }
@@ -24,5 +22,4 @@ class Temp{
   double kelvinToFahrenheit(double kelvin) {
     return kelvin * 9 / 5 - 459.67;
   }
-
 }

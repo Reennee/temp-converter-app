@@ -1,7 +1,4 @@
-import 'package:flutter/material.dart';
-
 class Bytes {
-
   double bitsToBytes(double bits) {
     return bits / 8;
   }
