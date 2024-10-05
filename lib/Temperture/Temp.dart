@@ -32,15 +32,7 @@ class _TemperturepageState extends State<Temperturepage> {
           result = temp.celsiusToFahrenheit(z);
         } else if (TCC == 2) {
           result = temp.fahrenheitToCelsius(z);
-        } else if (TCC == 3) {
-          result = temp.celsiusToKelvin(z);
-        } else if (TCC == 4) {
-          result = temp.kelvinToCelsius(z);
-        } else if (TCC == 5) {
-          result = temp.fahrenheitToKelvin(z);
-        } else if (TCC == 6) {
-          result = temp.kelvinToFahrenheit(z);
-        }
+        } else if (TCC == 3) {}
       });
     } catch (e) {
       ScaffoldMessenger.of(context).showSnackBar(
@@ -142,71 +134,6 @@ class _TemperturepageState extends State<Temperturepage> {
               ),
               const Text('Fahrenheit To Celsius',
                   style: TextStyle(fontSize: 15)),
-            ],
-          ),
-          Row(
-            children: [
-              Radio(
-                value: 3,
-                groupValue: SelectedValue,
-                onChanged: (int? value) {
-                  setState(() {
-                    SelectedValue = 3;
-                    from = 'Celsius';
-                    to = 'Kelvin';
-                  });
-                },
-              ),
-              const Text('Celsius To Kelvin', style: TextStyle(fontSize: 15)),
-            ],
-          ),
-          Row(
-            children: [
-              Radio(
-                value: 4,
-                groupValue: SelectedValue,
-                onChanged: (int? value) {
-                  setState(() {
-                    SelectedValue = 4;
-                    from = 'Kelvin';
-                    to = 'Celsius';
-                  });
-                },
-              ),
-              const Text('Kelvin To Celsius', style: TextStyle(fontSize: 15)),
-            ],
-          ),
-          Row(
-            children: [
-              Radio(
-                value: 5,
-                groupValue: SelectedValue,
-                onChanged: (int? value) {
-                  setState(() {
-                    SelectedValue = 5;
-                    from = 'Fahrenheit';
-                    to = 'Kelvin';
-                  });
-                },
-              ),
-              const Text('Fahrenheit To Kelvin',
-                  style: TextStyle(fontSize: 15)),
-            ],
-          ),
-          Row(
-            children: [
-              Radio(
-                value: 6,
-                groupValue: SelectedValue,
-                onChanged: (int? value) {
-                  setState(() {
-                    SelectedValue = 6;
-                    from = 'Kelvin';
-                    to = 'Bytes';
-                  });
-                },
-              ),
-              const Text('Kilobytes To Bytes', style: TextStyle(fontSize: 15)),
             ],
           ),
           const SizedBox(height: 12),

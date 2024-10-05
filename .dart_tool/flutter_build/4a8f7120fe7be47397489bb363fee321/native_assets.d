@@ -1,0 +1,1 @@
+ /Users/macbook/Desktop/temp-converter-app/.dart_tool/flutter_build/4a8f7120fe7be47397489bb363fee321/native_assets.yaml: 
